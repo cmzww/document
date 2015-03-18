@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_xs_exception.html" title="Exception class for Xsens public libraries. Inherits from std::exception." alt="" coords="131,5,221,32"/>
+<area shape="rect" id="node3" href="$class_xs_device_configuration_exception.html" title="XsDeviceConfigurationException" alt="" coords="269,5,472,32"/>
+</map>

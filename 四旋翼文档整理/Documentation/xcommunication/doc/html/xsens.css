@@ -1,0 +1,853 @@
+/**
+*
+* Xsens main
+*
+**/
+
+*
+{
+margin:0;
+padding:0;
+border:0;
+}
+
+*.nvs,
+*.nvm
+{
+margin-top:0;
+margin-bottom:0;
+}
+
+/**
+*
+* global tag declarations
+*
+**/
+
+html
+{
+background-color:#fff;
+width:100%;
+text-align:center;
+overflow-y:scroll;
+}
+
+body
+{
+margin:4px auto;
+background-color:inherit;
+font-family: Arial, Helvetica, sans-serif;
+font-size:75%;
+font-weight:normal;
+text-decoration:none;
+text-align:left;
+line-height:1.5em;
+}
+
+h1,
+div.componentheading,
+*.contentheading
+{
+margin-top: 1.0em;
+margin-bottom:1.0em;
+line-height:1.1em;
+font-size:1.9em;
+font-weight:bold;
+color:#c16901;
+font-family:Arial,Helvetica,sans-serif;
+clear: both;
+}
+
+.anchor {
+color: #c16901;
+}
+
+
+h2,
+div#eventlist h2
+{
+margin-bottom:0;
+padding:0;
+font-weight:bold;
+line-height:1.5em;
+font-size:1.6em;
+color:#c16901;
+font-family:Arial,Helvetica,sans-serif;
+border:0;
+}
+
+h3
+{
+margin-top: 0.5em;
+margin-bottom:1.0em;
+line-height:inherit;
+font-size:1.3em;
+color:#000;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+h4
+{
+margin-bottom:1.0em;
+line-height:inherit;
+font-size:1em;
+color:#000;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+p
+{
+margin-bottom:1.0em;
+line-height:inherit;
+font-size:1em;
+color:#000;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+ul
+{
+margin-top: 1em;
+margin-bottom:1.0em;
+line-height:inherit;
+font-size:1em;
+color:#000;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+li
+{
+list-style-position:outside;
+list-style-type:disc;
+display:list-item;
+margin-left:4em;
+}
+
+ol li
+{
+list-style-position:outside;
+list-style-type:decimal;
+display:list-item;
+margin-left:4em;
+}
+
+h5
+{
+margin-bottom:1.0em;
+line-height:inherit;
+font-size:0.8em;
+color:#000;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+h6
+{
+margin-bottom:1.0em;
+line-height:inherit;
+font-size:0.6em;
+color:#000;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+table,
+tr,
+th,
+td
+{
+font-size:100%;
+}
+
+dt {
+	font-weight: bold;
+}
+
+a:active,
+a:visited,
+a:link,
+a:hover
+{
+color:#c16901;
+text-decoration: underline;
+cursor:pointer;
+outline:none;
+}
+
+div.multicol {
+	-moz-column-gap: 1em;
+	-webkit-column-gap: 1em;
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+}
+
+p.startli, p.startdd, p.starttd {
+	margin-top: 2px;
+}
+
+p.endli {
+	margin-bottom: 0px;
+}
+
+p.enddd {
+	margin-bottom: 4px;
+}
+
+p.endtd {
+	margin-bottom: 2px;
+}
+
+/* @end */
+
+caption {
+	font-weight: bold;
+}
+
+span.legend {
+        font-size: 70%;
+        text-align: center;
+}
+
+h3.version {
+        font-size: 90%;
+}
+
+div.qindex, div.navtab{
+	background-color: #efefef;
+	border: 1px solid #bfbfbf;
+	text-align: center;
+	margin: 2px;
+	padding: 2px;
+}
+
+div.qindex, div.navpath {
+	width: 100%;
+	line-height: 140%;
+}
+
+div.navtab {
+	margin-right: 15px;
+}
+
+/* @group link Styling */
+
+a {
+	color: #153788;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.contents a:visited {
+	color: #c16901;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a.qindex {
+	font-weight: bold;
+}
+
+a.qindexHL {
+	font-weight: bold;
+	background-color: #c16901;
+	color: #ffffff;
+	border: 1px double #c16901;
+}
+
+.contents a.qindexHL:visited {
+        color: #ffffff;
+}
+
+a.el {
+	font-weight: bold;
+	color: #c16901;
+}
+
+a.elRef {
+	color: #c16901;
+}
+
+a.code {
+	color: #c16901;
+}
+
+a.codeRef {
+	color: #c16901;
+}
+
+/* @end */
+
+dl.el {
+	margin-left: -1cm;
+}
+
+.fragment {
+	font-family: monospace, fixed;
+	font-size: 105%;	
+}
+
+pre.fragment {
+	border: 1px solid #bfbfbf;
+	background-color: #f5f5f5;
+	padding: 4px 6px;
+	margin: 4px 8px 4px 2px;
+	overflow: auto;
+	word-wrap: break-word;
+	font-size:  9pt;
+	line-height: 125%;
+}
+
+div.ah {
+	background-color: black;
+	font-weight: bold;
+	color: #ffffff;
+	margin-bottom: 3px;
+	margin-top: 3px
+}
+
+div.groupHeader {
+	margin-left: 16px;
+	margin-top: 12px;
+	margin-bottom: 6px;
+	font-weight: bold;
+}
+
+div.groupText {
+	margin-left: 16px;
+	font-style: italic;
+}
+
+body {
+	background: white;
+	color: black;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+td.indexkey {
+	background-color: #efefef;
+	font-weight: bold;
+	border: 1px solid #bfbfbf;
+	margin: 2px 0px 2px 0;
+	padding: 2px 10px;
+}
+
+td.indexvalue {
+	background-color: #efefef;
+	border: 1px solid #bfbfbf;
+	padding: 2px 10px;
+	margin: 2px 0px;
+}
+
+tr.memlist {
+	background-color: #f0f0f0;
+}
+
+p.formulaDsp {
+	text-align: center;
+}
+
+img.formulaDsp {
+	
+}
+
+img.formulaInl {
+	vertical-align: middle;
+}
+
+div.center {
+	text-align: center;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
+}
+
+div.center img {
+	border: 0px;
+}
+
+img.footer {
+	border: 0px;
+	vertical-align: middle;
+}
+
+/* @group Code Colorization */
+
+span.keyword {
+	color: #008000
+}
+
+span.keywordtype {
+	color: #604020
+}
+
+span.keywordflow {
+	color: #e08000
+}
+
+span.comment {
+	color: #800000
+}
+
+span.preprocessor {
+	color: #806020
+}
+
+span.stringliteral {
+	color: #002080
+}
+
+span.charliteral {
+	color: #008080
+}
+
+span.vhdldigit { 
+	color: #ff00ff 
+}
+
+span.vhdlchar { 
+	color: #000000 
+}
+
+span.vhdlkeyword { 
+	color: #700070 
+}
+
+span.vhdllogic { 
+	color: #ff0000 
+}
+
+/* @end */
+
+.search {
+	color: #003399;
+	font-weight: bold;
+}
+
+form.search {
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+input.search {
+	font-size: 75%;
+	color: #000080;
+	font-weight: normal;
+	background-color: #e8eef2;
+}
+
+td.tiny {
+	font-size: 75%;
+}
+
+.dirtab {
+	padding: 4px;
+	border-collapse: collapse;
+	border: 1px solid #bfbfbf;
+}
+
+th.dirtab {
+	background: #efefef;
+	font-weight: bold;
+}
+
+hr {
+	height: 0px;
+	border: none;
+	border-top: 1px solid #bfbfbf;
+	clear: both;
+}
+
+hr.footer {
+	height: 1px;
+}
+
+/* @group Member Descriptions */
+
+.mdescLeft, .mdescRight,
+.memItemLeft, .memItemRight,
+.memTemplitemLeft, .memTemplitemRight, .memTemplParams {
+	background-color: #FAFAFA;
+	border: none;
+	margin: 4px;
+	padding: 1px 0 0 8px;
+}
+
+.mdescLeft, .mdescRight {
+	padding: 0px 8px 4px 8px;
+	color: #555;
+}
+
+.memItemLeft, .memItemRight, .memTemplParams {
+	border-top: 1px solid #bfbfbf;
+}
+
+.memItemLeft, .memTemplitemLeft {
+        white-space: nowrap;
+}
+
+.memTemplParams {
+	color: #606060;
+        white-space: nowrap;
+}
+
+/* @end */
+
+/* @group Member Details */
+
+/* Styles for detailed member documentation */
+
+.memtemplate {
+	font-size: 80%;
+	color: #606060;
+	font-weight: normal;
+	margin-left: 3px;
+}
+
+.memnav {
+	background-color: #efefef;
+	border: 1px solid #bfbfbf;
+	text-align: center;
+	margin: 2px;
+	margin-right: 15px;
+	padding: 2px;
+}
+
+.memitem {
+	padding: 0;
+	margin-bottom: 10px;
+}
+
+.memname {
+        white-space: nowrap;
+        font-weight: bold;
+        margin-left: 6px;
+}
+
+.memproto {
+        border-top: 1px solid #bfbfbf;          
+        border-left: 1px solid #bfbfbf;         
+        border-right: 1px solid #bfbfbf; 
+        padding: 0;
+        background-color: #cfcfcf;
+        font-weight: bold;
+        /* firefox specific markup */
+        background-image: -moz-linear-gradient(rgba(228, 233, 245, 1.0) 0%, rgba(193, 205, 232, 1.0) 100%);
+        -moz-box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
+        -moz-border-radius-topright: 8px;
+        -moz-border-radius-topleft: 8px;
+        /* webkit specific markup */
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(228, 233, 245, 1.0)), to(rgba(193, 205, 232, 1.0)));
+        -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        -webkit-border-top-right-radius: 8px;
+        -webkit-border-top-left-radius: 8px;
+
+}
+
+.memdoc {
+        border-bottom: 1px solid #bfbfbf;      
+        border-left: 1px solid #bfbfbf;      
+        border-right: 1px solid #bfbfbf; 
+        padding: 2px 5px;
+        background-color: #efefef;
+        border-top-width: 0;
+        /* firefox specific markup */
+        -moz-border-radius-bottomleft: 8px;
+        -moz-border-radius-bottomright: 8px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
+        /* webkit specific markup */
+        -webkit-border-bottom-left-radius: 8px;
+        -webkit-border-bottom-right-radius: 8px;
+        -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.paramkey {
+	text-align: right;
+}
+
+.paramtype {
+	white-space: nowrap;
+}
+
+.paramname {
+	color: #602020;
+	white-space: nowrap;
+}
+.paramname em {
+	font-style: normal;
+}
+
+/* @end */
+
+/* @group Directory (tree) */
+
+/* for the tree view */
+
+.ftvtree {
+	font-family: sans-serif;
+	margin: 0.5em;
+}
+
+/* these are for tree view when used as main index */
+
+.directory {
+	font-size: 9pt;
+	font-weight: bold;
+}
+
+.directory h3 {
+	margin: 0px;
+	margin-top: 1em;
+	font-size: 11pt;
+}
+
+/*
+The following two styles can be used to replace the root node title
+with an image of your choice.  Simply uncomment the next two styles,
+specify the name of your image and be sure to set 'height' to the
+proper pixel height of your image.
+*/
+
+/*
+.directory h3.swap {
+	height: 61px;
+	background-repeat: no-repeat;
+	background-image: url("yourimage.gif");
+}
+.directory h3.swap span {
+	display: none;
+}
+*/
+
+.directory > h3 {
+	margin-top: 0;
+}
+
+.directory p {
+	margin: 0px;
+	white-space: nowrap;
+}
+
+.directory div {
+	display: none;
+	margin: 0px;
+}
+
+.directory img {
+	vertical-align: -30%;
+}
+
+/* these are for tree view when not used as main index */
+
+.directory-alt {
+	font-size: 100%;
+	font-weight: bold;
+}
+
+.directory-alt h3 {
+	margin: 0px;
+	margin-top: 1em;
+	font-size: 11pt;
+}
+
+.directory-alt > h3 {
+	margin-top: 0;
+}
+
+.directory-alt p {
+	margin: 0px;
+	white-space: nowrap;
+}
+
+.directory-alt div {
+	display: none;
+	margin: 0px;
+}
+
+.directory-alt img {
+	vertical-align: -30%;
+}
+
+/* @end */
+
+address {
+	font-style: normal;
+	color: #333;
+}
+
+table.doxtable {
+	border-collapse:collapse;
+}
+
+table.doxtable td, table.doxtable th {
+	border: 1px solid #bfbfbf;
+	padding: 3px 7px 2px;
+}
+
+table.doxtable th {
+	background-color: #cfcfcf;
+	color: #c16901;
+	font-size: 110%;
+	padding-bottom: 4px;
+	padding-top: 5px;
+	text-align:left;
+}
+
+div.contents {
+	clear: left;
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
+div.tabs, div.tabs2, div.tabs3, div.summary
+{
+   clear			: left;
+   width            : 75%;
+   margin-bottom    : 4px;
+}
+
+div.tabs ul, div.tabs2 ul, div.tabs3 ul
+{
+   margin           : 0px;
+   padding-left     : 10px;
+   list-style       : none;
+}
+
+div.tabs li, div.tabs form, div.tabs2 li, div.tabs2 form, div.tabs3 li, div.tabs3 form
+{
+   display          : inline;
+   margin           : 0px;
+   padding          : 0px;
+}
+
+div.tabs form
+{
+   float            : right;
+}
+
+div.tabs a, div.tabs2 a, div.tabs3 a
+{
+   float            : left;
+   border-bottom    : 1px solid #bfbfbf;
+   font-size        : 80%;
+   font-weight      : bold;
+   text-decoration  : none;
+}
+
+div.tabs a:hover, div.tabs2 a:hover, div.tabs3 a:hover
+{
+   background-position: 100% -150px;
+}
+
+div.tabs a:link, div.tabs a:visited,
+div.tabs a:active, div.tabs a:hover,
+div.tabs2 a:link, div.tabs2 a:visited,
+div.tabs2 a:active, div.tabs2 a:hover,
+div.tabs3 a:link, div.tabs3 a:visited,
+div.tabs3 a:active, div.tabs3 a:hover
+{
+       color: #c16901;
+}
+
+div.tabs span, div.tabs2 span, div.tabs3 span
+{
+   float            : left;
+   display          : block;
+   padding          : 5px 9px;
+   white-space      : nowrap;
+}
+
+div.tabs #MSearchBox
+{
+   float            : right;
+   display          : inline;
+   font-size        : 1em;
+}
+
+div.tabs td, div.tabs2 td, div.tabs3 td
+{
+   font-size        : 80%;
+   font-weight      : bold;
+   text-decoration  : none;
+}
+
+
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+div.tabs span {float : none;}
+/* End IE5-Mac hack */
+
+div.tabs a:hover span, div.tabs2 a:hover span, div.tabs3 a:hover span
+{
+   background-color: #efefef;
+   background-position: 0% -150px;
+}
+
+div.tabs li.current a, div.tabs2 li.current a, div.tabs3 li.current a
+{
+   border    : 1px solid #bfbfbf;
+   background-position: 100% -150px;
+   border-width     : 0px;
+}
+
+div.tabs li.current span, div.tabs2 li.current span, div.tabs3 li.current span
+{
+   border    : 1px solid #bfbfbf;
+   background-position: 0% -150px;
+   padding-bottom: 4px
+}
+
+div.navpath
+{
+   background       : none;
+   border           : none;
+   border-bottom    : 1px solid #bfbfbf;
+   text-align       : center;
+   margin           : 2px;
+   padding          : 2px;
+}
+
+img.logo
+{
+   float            : right;
+   margin-bottom    : 0px;
+   height	: 128px;
+   width: 128px;
+}
+
+.title {
+	margin-bottom:1.0em;
+	font-size:2em;
+	font-weight:bold;
+	line-height:3em;
+	color:#c16901;
+	font-family:Arial,Helvetica,sans-serif;
+	clear: left;
+}
+
+.rewritedoc
+{
+	color:#ff0000;
+}
+
+div.readabledox
+{
+	max-width:	800px;
+}
+
+div.doxyimage
+{
+	text-align		: center;
+	padding-top		: 25px;
+	padding-bottom	: 25px;
+}
+
+div.doxyimage div.caption
+{
+	text-align	: center;
+	font-weight	: bold;	
+}
+
+span.mlabel
+{
+	visibility : hidden;
+}

@@ -1,0 +1,48 @@
+%function [ data ] = creat_dat( num )
+%UNTITLED2 Summary of this function goes here
+%   Detailed explanation goes here
+
+
+%end
+
+%clear
+%[X,Y]=meshgrid([-1:.05:1]);
+%Z=sqrt(1-X.^2-Y.^2);
+%Z((X.^2+Y.^2)>1)=0;
+%figure;
+%title('球面x.^2+y.^2+z.^2=1')
+%axis([-1 1 -1 1 -1 1]);
+%mesh(X,Y,abs(Z));
+%hold on;
+%mesh(X,Y,-abs(Z));
+
+
+%figure;
+%scatter3(x,y,z,s,c,'filled')
+clear;
+clc;
+
+[x,y,z]=sphere(100);
+data=10*unique([x(:),y(:),z(:)],'rows');
+data=data+rand(size(data,1),size(data,2));%
+
+f=@(p,data)(data(:,1)-p(1)).^2+(data(:,2)-p(2)).^2+(data(:,3)-p(3)).^2-p(4)^2;
+p=nlinfit(data,zeros(size(data,1),1),f,[0 0 0 1]');%拟合的参数
+p1 = sphere_regress(data,100);
+%p2 = sphere_regress(data,1000);
+hold on
+plot3(data(:,1),data(:,2),data(:,3),'.');
+[X,Y,Z]=meshgrid(linspace(-14,14));
+V=(X-p(1)).^2+(Y-p(2)).^2+(Z-p(3)).^2-p(4)^2;
+isosurface(X,Y,Z,V,0);
+alpha 1;
+camlight;
+axis equal;
+grid on;
+view(3);
+title(sprintf('(x-%f)^2+(y-%f)^2+(z-%f)^2=%f',p(1),p(2),p(3),p(4)^2))
+
+
+
+
+

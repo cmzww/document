@@ -1,0 +1,4 @@
+<map id="XsDevicePtrArray" name="XsDevicePtrArray">
+<area shape="rect" id="node2" href="$struct_xs_array_impl.html" title="XsArrayImpl\&lt; XsDevicePtr,\l g_xsDevicePtrArrayDescriptor,\l XsDevicePtrArray \&gt;" alt="" coords="5,80,203,136"/>
+<area shape="rect" id="node3" href="$struct_xs_array.html" title="Provides generic storage for data in an array and manipulation operations on that data..." alt="" coords="71,5,137,32"/>
+</map>
